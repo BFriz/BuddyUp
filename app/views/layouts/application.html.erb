@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <nav>
+    <li> <%= link_to('Home', goals_path) %></li>
+    <li> <%= link_to('Add a Goal', new_goal_path) %></li>
+  </nav>
+</header>
 
 <%= yield %>
 
