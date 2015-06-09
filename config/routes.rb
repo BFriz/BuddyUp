@@ -3,11 +3,14 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'goals#index'
 
   resources :goals do
-    resources :user
+    resources :users
   end
+
+  root 'goals#index'
+  put 'goals/:id/add_user' => 'goals#add_user', as: :add_user
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
