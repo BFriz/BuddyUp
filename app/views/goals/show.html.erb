@@ -1,12 +1,27 @@
-<h1><%= @goal.name %></h1>
-<p><%= @goal.category %></p>
-<p><%= @goal.duration %></p>
-<p><%= @goal.content %></p>
+<div class="join" <% if @goal.users.length >= 2 %>style="display:none;"<% end %>>
 
+  <h1><%= @goal.name %></h1>
+  <p><%= @goal.category %></p>
+  <p><%= @goal.duration %></p>
+  <p><%= @goal.content %></p>
+  <%= form_tag add_user_path(@goal), method: "put" do |form| %>
+    <%= submit_tag 'Join' %>
+  <% end %>
+</div> 
 
-<%= form_tag add_user_path(@goal), method: "put" do |form| %>
-  <%= submit_tag 'Join' %>
-<% end %>
+<div class="toomany" <% if @goal.users.length <= 1 %>style="display:none;"<% end %>>
+
+  <%= link_to 'Lets do this', goal_comments_path(@goal) %>
+
+  <p>"Sorry this goal is already underway feel free the make another one to team up with a buddy!</p>
+  <div class="hide">
+    <h1><%= @goal.name %></h1>
+    <p><%= @goal.category %></p>
+    <p><%= @goal.duration %></p>
+    <p><%= @goal.content %></p>
+    <%= form_tag %>
+  </div>
+</div>
 
 
 

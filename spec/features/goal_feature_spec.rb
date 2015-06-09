@@ -15,17 +15,20 @@ describe 'goal' do
   end
 
   it 'a user can join an existing goal' do
-    goal = Goal.create(category: 'Fitness', name: 'Fit', duration: 30, content: 'Let us get fit')
+    goal = Goal.create(category: 'Fitness', name: 'xfit', duration: 30, content: 'Let us get xfit')
     visit '/'
     click_link goal.name
-    # go to homepage
-    # click on goal link
-    # click join goal
     click_button 'Join'
 
     expect(page).to have_content 'You have joined'
-    # (expectation) I should get a message telling me I have joined the goal
   end
+
+  # it 'allows users to communicate'
+
+  #   goal = Goal.create(category: 'Fitness', name: 'Fit', duration: 30, content: 'Let us get f
+  #   visit '/'
+  #   click_link goal.name
+  #   click_button 'Join'
 
 
 end

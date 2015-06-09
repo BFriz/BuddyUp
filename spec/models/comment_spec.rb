@@ -1,5 +1,14 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# RSpec.describe Comment, type: :model do
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
+describe 'comment' do
+  it 'a user can add a comment to the site' do
+    visit '/goals/:id/comments'
+    fill_in 'author', with: 'Donkey'
+    fill_in 'content', with: 'I really hope this works?'
+    click_button 'Submit'
+
+    expect(page).to have_content 'fit'
+  end
+
+
+end

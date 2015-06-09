@@ -2,6 +2,7 @@ class GoalsController < ApplicationController
 
   def index
     @goals = Goal.all
+    @goal = Goal.new    
   end
 
   def new 
@@ -10,7 +11,6 @@ class GoalsController < ApplicationController
 
   def create
     goal = Goal.new params[:goal].permit(:category, :name, :duration, :content)
-    # binding.pry
     if goal.save
       redirect_to goals_path
     else
@@ -18,7 +18,6 @@ class GoalsController < ApplicationController
     end
   end
   def show
-    # binding.pry
     @goal = Goal.find(params[:id])
   end
   def add_user

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   resources :goals do
-    resources :users
+    resources :comments
   end
 
   root 'goals#index'
