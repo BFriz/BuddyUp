@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,8 +9,15 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  root 'goals#index'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+
+  root 'users#index'
   put 'goals/:id/add_user' => 'goals#add_user', as: :add_user
+
+  resources :users
+
+  resources :sessions
   
 
   # Example of regular route:

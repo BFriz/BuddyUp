@@ -8,7 +8,23 @@
 </head>
 <body>
 
-<% if flash[:success] %>
+<% flash.each do |name, msg| %>
+  <div class="flash-message flash-message-<%= name %>">
+  <%= msg %>
+  </div>
+  <% end %>
+
+    
+    <p><%= current_user.nil? %></p>
+    <% if current_user %>
+      <p>hello <%= current_user.email %></p>
+      <p><%= link_to 'log out', logout_path %></p>
+    <% else %>
+      <p><%= link_to 'log in', new_session_path %></p>
+      <p><%= link_to 'sign up', new_user_path %></p>
+    <% end %>
+
+  <% if flash[:success] %>
   <p><%= flash[:success] %></p>
 <% end %>
 

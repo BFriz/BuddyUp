@@ -1,1 +1,29 @@
-work?
+<h1>BUDDyUP</h1>
+
+<ul class="new_com">
+  <li> <%= link_to('New Comment', new_goal_comment_path) %>  </li>
+  <li></li>
+  <li></li>
+</ul>
+
+
+<div class="content">
+<p><%= @goal.category %></p>
+<p><%= @goal.name %></p>
+<p><%= @goal.duration %></p>
+<p><%= @goal.content %></p>
+</div>
+
+
+<div class="comments">
+    <% @goal.comments.each do |comment| %>
+      <p> <%= comment.author %> </p>
+      <p> <%= comment.created_at %> </p>
+      <p> <%= comment.content %> </p>
+
+      <p> <%= link_to('Delete', goal_comment_path(@goal, comment), method: :delete) %> </p>
+      <p> <%= link_to('EDIT', edit_goal_comment_path(@goal, comment)) %> </p>
+
+
+    <% end %>
+</div>
