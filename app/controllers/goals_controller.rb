@@ -24,10 +24,8 @@ class GoalsController < ApplicationController
   
   def add_user
     @goal = Goal.find(params[:id])
-    # shovel the user ound by the params
-    # user = User,find(parsmsv,g)
-    # binding.pry
-    @goal.users << current_user unless @goal.users.include? current_user
+    binding.pry
+    @goal.users << current_user 
     respond_to do |format|
       format.html
   # Include gives you all the assocaitions on goal in this case users)

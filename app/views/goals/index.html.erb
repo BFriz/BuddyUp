@@ -1,4 +1,12 @@
-<% @goals.each do |goal| %>
-  <p><%= link_to goal.name, goal_path(goal), class: goal_expired?(goal) ? 'hidden' : '' %></p>
-<% end %>
+  <div class="background"><header>We believe things are done right when they are done together. With BuddyUp you can team-up with people around the world to tackle the tiniest hurdle to the goals and challenges that are massive in your life ... We believe the buddy system never fails.</header>
+
+  <h2>If you want to Add a goal simply click above if you want to see existing goals check below...</h2>
+
+
+
+
+  <% @goals.each do |goal| %>
+    <p class= 'goals'><%= link_to goal.name, goal_path(goal),class: goal_expired?(goal) ? 'hidden' : '' %></p>
+  <% end %>
+  </div>
 </div>

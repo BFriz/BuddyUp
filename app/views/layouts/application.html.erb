@@ -6,37 +6,39 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class='box box-6'>
+<div class='box box-7'>
    <h1 class = 'login'>
-   <% if current_user %>
-        <p>hello <%= current_user.email %></p>
-        <p><%= link_to 'log out', logout_path %></p>
+  
+  </h1>
+
+
+<!-- <div class="box box-4"> -->
+  <nav class='nav'>
+    <%= link_to'Home', goals_path, class: 'navs' %>
+    <%= link_to'Add a Goal', new_goal_path,class: 'navs' %>
+     <% if current_user %>
+        <!-- <p>hello <%= current_user.email %></p> -->
+        <%= link_to 'log out', logout_path %>
         <% else %>
-        <p><%= link_to 'log in', new_session_path, class: 'navs' %>
-        <%= link_to 'sign up', new_user_path, class: 'navs' %></p>
+        <%= link_to 'log in', new_session_path, class: 'navs' %>
+        <%= link_to 'sign up', new_user_path, class: 'navs' %>
       <% end %>
 
      <% if flash[:success] %>
       <p><%= flash[:success] %></p>
     <% end %>
-  </h1>
-
-
-<!-- <div class="box box-2"> -->
-  <nav class='nav'>
-    <%= link_to'Home', goals_path, class: 'navs' %>
-    <%= link_to'Add a Goal', new_goal_path,class: 'navs' %>
   </nav>
-</div>
-
 <!-- </div> -->
 
+</div>
 
 
-<div class="box box-4">
-  <h1 class = 'buddy'>BUDDY-UP</h1>
+
+<div class="box box-3">
+  <div class = 'buddy'>BUDDY-UP</div>
 </div>
 
 

@@ -1,22 +1,24 @@
 <%= form_for @goal do |form| %>
-  
-  <%= form.label :category %>
+  <p>
+  <%= form.label :category %>:
   <%= form.text_field :category %>
-  <%= 'examples include Fitness, Langauge, challenge' %>
-
-
-  <%= form.label :name %>
+  <p class="formed"><%= 'examples include Fitness, Langauge, challenge' %></p>
+</p>
+<p>
+  <%= form.label :name %>:
   <%= form.text_field :name %>
-  <%= 'Enter a catchy title for your goal' %>
-
-  <%= form.label :duration %>
-  <%= form.text_field :duration %>
-  <%= 'How long do you want your goal to last in days' %>
-
-  <%= form.label :content %>
-  <%= form.text_field :content %>
-  <%= 'Short description about this' %>
-
+  <p class="formed"> <%= 'Enter a catchy title for your goal' %></p>
+</p>
+<p>
+  <%= form.label :duration %>:
+  <%= form.text_field :duration, size: '20x2' %> Days
+ <p class="formed"> <%= 'How long do you want your goal to last in days' %></p>
+</p>
+<p>
+  <%= form.label :content %>:
+  <%= form.text_area :content, size: "120x12"  %>
+ <p class="formed"> <%= 'Short description about your goal and what it means to you' %></p>
+</p>
   <%= form.submit 'Submit' %>
 
 <% end %>

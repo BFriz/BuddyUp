@@ -1,31 +1,31 @@
-<div class="join">
-  <% if current_user && !@goal.users.include?(current_user) %>
-    <%= form_tag add_user_path(@goal), method: "put", class: 'js-join-goal-form', data: { goal_id: @goal.id } do |form| %>
-    <% end %>
-      <%= submit_tag 'Join' %>
-    <h1><%= @goal.name %></h1>
-    <p><%= @goal.category %></p>
-    <p><%= @goal.duration %></p>
-    <p><%= @goal.content %></p>
+<div class="goal-join">
+  <div class="join">
+      <% if current_user && !@goal.users.include?(current_user) %>
+        <%= form_tag add_user_path(@goal), _method: 'PUT', class: 'submit-tag', data: { goal_id: @goal.id } do |form| %>
+        <% end %>
+          <%= submit_tag 'Join', :class => 'submit-tag' %>
+        <h1><%= @goal.name %></h1>
+        <p>Category: <%= @goal.category %></p>
+        <p>Duration: <%= @goal.duration %> Days</p>
+        <p><%= @goal.content %></p>
+      <% end %>
+   </div>
+
+  <div class="no-join">
+    <% if current_user == nil %>
+      <h1>Sorry you are either a member of this goal or you have to login!</h1>
+      <h1><%= @goal.name %></h1>
+      <p>Category: <%= @goal.category %></p>
+      <p>Duration: <%= @goal.duration %> Days</p>
+      <p><%= @goal.content %></p>
+      <% end %>
+  </div>
+
+  <div class="joined">
+    <% if current_user && @goal.users.include?(current_user) %>
+    <%= link_to 'Lets do this', goal_comments_path(@goal) %>
+
   <% end %>
-</div>
-
-<div class="no-join">
-  <% if current_user == nil %>
-    <h1>Sorry you are either a member of this goal or you have to login!</h1>
-    <h1><%= @goal.name %></h1>
-    <p><%= @goal.category %></p>
-    <p><%= @goal.duration %></p>
-    <p><%= @goal.content %></p>
-    <% end %>
-</div>
-
-<div class="joined">
-  <% if current_user && @goal.users.include?(current_user) %>
-
-
-  <%= link_to 'Lets do this', goal_comments_path(@goal) %>
-
-<% end %>
-
+  <%= binding.pry %>
+  </div>
 </div>

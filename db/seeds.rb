@@ -21,7 +21,7 @@ And Then There Were None  Agatha Christie
 紅樓夢/红楼梦 (Dream of the Red Chamber)  Cao Xueqin
 She: A History of Adventure')
 g3 = Goal.create(category: 'language', name: 'Lets learn a langauge', duration: 60, content: 'Looking to learn as much Spanish as I can in 60 days before I embark on on a beautiful honey moon in Spain')
-g4 = Goal.create(category: 'challenge', name: 'unplugged - no cell-phone for a month', duration:30, content: 'Doctors orders to put away my phone for a month to deal with my anxiety hoping to stay in contact a little and make it through this massive feat with someone.')
+g4 = Goal.create(category: 'challenge', name: 'unplugged', duration:30, content: 'Doctors orders to put away my phone for a month to deal with my anxiety hoping to stay in contact a little and make it through this massive feat with someone.')
 g1 = Goal.create(category: 'Fitness', name: 'Learn to do a Muscle-Up', duration: 30, content: 'I have always wanted to be able to do a muscle up but have always come up short. I am looking for someone to team up with and power through to accomplish this feat. Hopefully someone with previous workout experience.')
 g1 = Goal.create(category: 'Computer Science', name: 'Learn to program', duration: 60, content: 'I want to learn how to program but not pay a wack of cash. The biggest problem that has been facing me is that I do not have anyone to talk my about certain issues as well as someone to help motivate. Looking for someone interested.')
 g1 = Goal.create(category: 'Weird', name: 'Juggling', duration: 7, content: 'Hey I have a bet with roomate that I cannot learn how to juggle in 7 days - looking for someone with experience or just keen where we can through back and forth trails and tribulations.')

@@ -1,11 +1,13 @@
 $( document ).ready(function() {
-  $('.js-join-goal-form').on('submit', function(e){
+  $('.submit-tag').on('click', function(e){
+    console.log('tits')
     // prevent the default action of the form
     e.preventDefault();
-    var goalId = $(this).data('goal-id');
+
+    var goalId = window.location.pathname;
     $.ajax({
       type: 'PUT',
-      url: "/goals/" + goalId + "/add_user",
+      url: goalId + "/add_user",
       dataType: "json"
     }).done(function(response){
       $('.js-join-goal-form').hide();
