@@ -24,12 +24,13 @@ class GoalsController < ApplicationController
   
   def add_user
     @goal = Goal.find(params[:id])
-    binding.pry
     @goal.users << current_user 
     respond_to do |format|
       format.html
   # Include gives you all the assocaitions on goal in this case users)
       format.json { render json: @goal.to_json(include: :users), status: 200 }
+      redirect_to :back
+
     end
   end
 

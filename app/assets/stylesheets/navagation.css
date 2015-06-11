@@ -21,7 +21,7 @@ h1 {
   position: absolute;
   top: -80%;
   left: 0;
-  color: lighten(#383838, 5%);
+  color: grey;
   text-shadow: 0.5px 0.5px 0.5px darken(#383838, 2%);
   width: 100%;
   text-align: center;
@@ -41,12 +41,9 @@ ul {
   align-content: center;
 }
 
-li {
-  display: flex;
-}
 
 a {
-  color: #eee;
+  color: grey;
   text-decoration: none;
   display: inline-block;
   position: relative;

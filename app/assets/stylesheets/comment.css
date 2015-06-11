@@ -1,0 +1,8 @@
+.comments {
+  -webkit-column-rule: dark grey;
+  -moz-column-rule: dark grey;
+  -o-column-rule: dark grey;
+  column-rule: dark grey;
+  color: grey;
+  font-size: 30px;
+}

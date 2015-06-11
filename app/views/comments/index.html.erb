@@ -1,4 +1,4 @@
-<h1>BUDDyUP</h1>
+<h3>BUDDyUP</h3>
 
 <ul class="new_com">
   <li> <%= link_to('New Comment', new_goal_comment_path) %>  </li>
@@ -6,21 +6,20 @@
 
 
 <div class="content">
-<p><%= @goal.category %></p>
-<p><%= @goal.name %></p>
-<p><%= @goal.duration %></p>
+<p>Category: <%= @goal.category %></p>
+<p>Name: <%= @goal.name %></p>
+<p>Duration: <%= @goal.duration %> Days</p>
 <p><%= @goal.content %></p>
 </div>
 
 
 <div class="comments">
     <% @goal.comments.each do |comment| %>
-      <p> <%= comment.author %> </p>
-      <p> <%= comment.created_at %> </p>
+      <%= comment.author %> (Created at: <%= comment.created_at %>)
       <p> <%= comment.content %> </p>
 
-      <p> <%= link_to('Delete', goal_comment_path(@goal, comment), method: :delete) %> </p>
-      <p> <%= link_to('EDIT', edit_goal_comment_path(@goal, comment)) %> </p>
+  <p><%= link_to('Delete', goal_comment_path(@goal, comment), method: :delete) %>
+  <%= link_to('EDIT', edit_goal_comment_path(@goal, comment)) %></p>
 
 
     <% end %>
