@@ -1,0 +1,19 @@
+.hidden {
+  /*display: none;*/
+}
+
+
+.buddy {
+font-family: 'Indie Flower', cursive;
+font-size: 80px;
+text-align: right;
+text-decoration: rgba(224, 38, 63, 0.6);
+font-weight: 20;
+text-align: center;
+}
+
+.navs {
+  text-decoration: none; 
+  font-size: 25px;
+
+}

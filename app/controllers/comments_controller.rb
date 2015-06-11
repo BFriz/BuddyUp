@@ -27,6 +27,12 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @goal = Goal.find(params[:goal_id])
   end
+  def update
+    @comment = Comment.find(params[:id])
+    @goal = Goal.find(params[:goal_id])
+    @comment.update(comment_params)
+    redirect_to goal_comments_path(@comment)
+  end
 
   private
   def comment_params

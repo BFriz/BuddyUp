@@ -2,38 +2,46 @@
 <html>
 <head>
   <title>BuddyUp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class='box box-6'>
+   <h1 class = 'login'>
+   <% if current_user %>
+        <p>hello <%= current_user.email %></p>
+        <p><%= link_to 'log out', logout_path %></p>
+        <% else %>
+        <p><%= link_to 'log in', new_session_path, class: 'navs' %>
+        <%= link_to 'sign up', new_user_path, class: 'navs' %></p>
+      <% end %>
 
-<% flash.each do |name, msg| %>
-  <div class="flash-message flash-message-<%= name %>">
-  <%= msg %>
-  </div>
-  <% end %>
-
-    
-    <p><%= current_user.nil? %></p>
-    <% if current_user %>
-      <p>hello <%= current_user.email %></p>
-      <p><%= link_to 'log out', logout_path %></p>
-    <% else %>
-      <p><%= link_to 'log in', new_session_path %></p>
-      <p><%= link_to 'sign up', new_user_path %></p>
+     <% if flash[:success] %>
+      <p><%= flash[:success] %></p>
     <% end %>
+  </h1>
 
-  <% if flash[:success] %>
-  <p><%= flash[:success] %></p>
-<% end %>
 
-<header>
-  <nav>
-    <li> <%= link_to('Home', goals_path) %></li>
-    <li> <%= link_to('Add a Goal', new_goal_path) %></li>
+<!-- <div class="box box-2"> -->
+  <nav class='nav'>
+    <%= link_to'Home', goals_path, class: 'navs' %>
+    <%= link_to'Add a Goal', new_goal_path,class: 'navs' %>
   </nav>
-</header>
+</div>
+
+<!-- </div> -->
+
+
+
+<div class="box box-4">
+  <h1 class = 'buddy'>BUDDY-UP</h1>
+</div>
+
+
+   
+
 
 <%= yield %>
 
