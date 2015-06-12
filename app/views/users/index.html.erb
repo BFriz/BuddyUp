@@ -1,4 +1,7 @@
 <h1>Users</h1>
 
-<%= current_user.nick_name %> has logged in.
-
+<% if current_user %>
+Hello: <%= current_user.nick_name %> 
+<% else %>
+<p>please login.</p>
+<% end %>
