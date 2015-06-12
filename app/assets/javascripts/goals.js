@@ -1,6 +1,5 @@
 $( document ).ready(function() {
   $('.submit-tag').on('click', function(e){
-    console.log('tits')
     // prevent the default action of the form
     e.preventDefault();
 
