@@ -15,12 +15,10 @@
   </h1>
 
 
-<!-- <div class="box box-4"> -->
   <nav class='nav'>
     <%= link_to'Home', goals_path, class: 'navs' %>
     <%= link_to'Add a Goal', new_goal_path,class: 'navs' %>
      <% if current_user %>
-        <!-- <p>hello <%= current_user.email %></p> -->
         <%= link_to 'log out', logout_path %>
         <% else %>
         <%= link_to 'log in', new_session_path, class: 'navs' %>

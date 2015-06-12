@@ -6,12 +6,14 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+Ruby 2.1.5
 
 * System dependencies
 
 * Configuration
 
 * Database creation
+see schema
 
 * Database initialization
 
@@ -20,8 +22,24 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+rails s then head to http://localhost:3000/
 
 * ...
+
+
+Just download the file and run in on local host after a bundle (in terminal) and rake db:reset. 
+
+This is an application that is only tied to local host. Running rake db:reset will refresh the database and load it up on the terminal in rails s. Make sure to run bundle to have necessary Gems. 
+
+Key functionality is the goals will terminate after the duration has been met. They cannot be deleted by the users. Users are able to join a group but no more than 2 users per group and one user cannot join the same goal. Once the user has established a goal they wish to pursue they can enter the commit section. From here the two individuals can discuss best practices and help each other reach their goals together. 
+
+Author is Ben Frisby
+bfrisb@gmail.com Ben Inc 
+Flat 11 59 Talgarth Road
+w14 9dd
+West London
+
+
 
 
 Please feel free to use a different markup language if you do not plan to run

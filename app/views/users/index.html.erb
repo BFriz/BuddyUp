@@ -1,6 +1,4 @@
 <h1>Users</h1>
 
-<% @users.each do |user| %>
-  <%= user.email %>
-  <%= user.password_digest %>
-<% end %>
+<%= current_user.nick_name %> has logged in.
+

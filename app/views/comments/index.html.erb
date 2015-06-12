@@ -15,7 +15,7 @@
 
 <div class="comments">
     <% @goal.comments.each do |comment| %>
-      <%= comment.author %> (Created at: <%= comment.created_at %>)
+      <div class="comments-goal"><%= comment.author %> (Created at: <%= comment.created_at %>)</div>
       <p> <%= comment.content %> </p>
 
   <p><%= link_to('Delete', goal_comment_path(@goal, comment), method: :delete) %>

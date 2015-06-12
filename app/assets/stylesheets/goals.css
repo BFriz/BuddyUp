@@ -20,6 +20,7 @@ text-align: center;
   font-size: 25px;
 }*/
 
+
 .goals {  width: 29.333333%;
   height: 85px;
   display: inline-block;
@@ -86,7 +87,11 @@ span {
 }
 .lets-doit {
   color: black;
+  font-size: 80px;
+  text-decoration: underline;
 }
 
 
-
+.blueButtons > a {
+  color: white;
+}

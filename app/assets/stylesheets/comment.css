@@ -5,4 +5,9 @@
   column-rule: dark grey;
   color: grey;
   font-size: 30px;
+  text-align: center;
+}
+
+.comments-goal {
+  font-size: 15px;
 }

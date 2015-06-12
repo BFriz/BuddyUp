@@ -6,7 +6,7 @@
 
 
   <% @goals.each do |goal| %>
-    <p class= 'goals'><%= link_to goal.name, goal_path(goal),class: goal_expired?(goal) ? 'hidden' : '' %></p>
+    <p class= 'goals blueButtons'><%= link_to goal.name, goal_path(goal),class: goal_expired?(goal) ? 'hidden' : '' %></p>
   <% end %>
   </div>
 </div>
